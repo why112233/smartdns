@@ -1,7 +1,7 @@
 # SmartDNS
 
 ![SmartDNS](doc/smartdns-banner.png)  
-SmartDNS is a local DNS server. SmartDNS accepts DNS query requests from local clients, obtains DNS query results from multiple upstream DNS servers, and returns the fastest access results to clients. supports secure DNS protocols like DoT (DNS over TLS), DoH (DNS over HTTPS), better protect privacy,  
+SmartDNS is a local DNS server. SmartDNS accepts DNS query requests from local clients, obtains DNS query results from multiple upstream DNS servers, and returns the fastest access results to clients. supports secure DNS protocols like DoT, DoH, DoQ, DoH3, better protect privacy,  
 Avoiding DNS pollution and improving network access speed, supports high-performance ad filtering.
 
 Unlike dnsmasq's all-servers, smartdns returns the fastest access resolution.
@@ -13,6 +13,12 @@ Support Raspberry Pi, openwrt, ASUS router, Windows and other devices.
 Please visit website: [https://pymumu.github.io/smartdns](https://pymumu.github.io/smartdns/en)
 
 ## Software Show
+
+### Dashboard
+
+![SmartDNS-WebUI](doc/smartdns-webui.png)
+
+### Speed Comparison
 
 **Ali DNS**  
 Use Ali DNS to query Baidu's IP and test the results.  
@@ -75,14 +81,20 @@ From the comparison, smartdns found the fastest IP address to visit www.baidu.co
 
 ## Features
 
+1. **Multiple Virtual DNS server**  
+   Support multiple virtual DNS servers with different ports, rules, and clients.
+
 1. **Multiple upstream DNS servers**  
    Support configuring multiple upstream DNS servers and query at the same time.the query will not be affected, Even if there is a DNS server exception.  
 
+1. **Support per-client query control**  
+   Support controlling clients using different query rules based on MAC and IP addresses, enabling features such as parental control.  
+
 1. **Return the fastest IP address**  
-   Supports finding the fastest access IP address from the IP address list of the domain name and returning it to the client to avoid DNS pollution and improve network access speed.
+   Support finding the fastest access IP address from the IP address list of the domain name and returning it to the client to avoid DNS pollution and improve network access speed.
 
 1. **Support for multiple query protocols**  
-   Support UDP, TCP, DOT(DNS over TLS), DOH(DNS over HTTPS) queries and service, and non-53 port queries, effectively avoiding DNS pollution and protect privacy, and support query DNS over socks5, http proxy.
+   Support UDP, TCP, DOT(DNS over TLS), DOH(DNS over HTTPS), DOQ(DNS over Quic), DOH3(DNS over HTTP3) queries and service, and non-53 port queries, effectively avoiding DNS pollution and protect privacy, and support query DNS over socks5, http proxy.
 
 1. **Domain IP address specification**  
    Support configuring IP address of specific domain to achieve the effect of advertising filtering, and avoid malicious websites.
